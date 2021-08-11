@@ -131,8 +131,6 @@ X=carac2
 Y=carac2.status
 len(X),len(carac) #como vemos len(X)=179 son los datoslimpios con el IQR y len(carc)=195 son los datos orginales.
 
-sns.violinplot(p,Y,data=parkinsson) #Esta es una pequeña grafica de violin, donde vemos el enfoque de los datos viejos con los datos 'limpios' siendo P=carac y Y los datos limpios sobre la categorica 'status'
-
 X_train,X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.30, random_state=0) #aqui es donde empezamos a tomar la particion de que datos queremos para entrenar que es 70/30
 
 Logreg=LogisticRegression() #Definimos el metodo que queremos realizar para la prediccion que este es Regresion logistica 
@@ -196,4 +194,6 @@ plt.xlabel('Etiqueta de prediccion')
 
 print('Exactitud', metrics.accuracy_score(p_test,p_pred))# Veo que esta base de datos nos dice mucho, pero como son muchas 
                                                          #grabaciones de los mismos sujetos en mi opinion creo nodemos predecit mucho.
+
+sns.violinplot(p,Y,data=parkinsson) #Esta es una pequeña grafica de violin, donde vemos el enfoque de los datos viejos con los datos 'limpios' siendo P=carac y Y los datos limpios sobre la categorica 'status'
 
